@@ -1,0 +1,93 @@
+body{
+	background: #84b4be;
+	//text-align: center;
+	//height: 200px;
+	color:#333;
+}	
+.container{
+	display:block;
+	width:400px;
+	margin:100px auto 0;
+}
+h1{
+	color: #ffffff;
+	font-size:20px;
+	text-transform: uppercase;
+	padding: 20px 0 10px;
+	border-bottom: 2px solid #333;
+
+}
+head{
+	font-family: initial;
+	font-weight: 800;
+}
+input#userInput{
+	border-radius: 5px;
+	min-width: 96%;
+	border: none;
+	padding: 5px;
+    height: 28px;
+    margin:20px 0px;
+}
+
+
+li *{
+  float: left;
+}
+li, h1 {
+  clear:both;
+  list-style:none;
+}
+ul {
+  margin: 5px;
+  padding: 0;
+}
+
+button {
+  background: none;
+  border: 0px;
+  color: #888;
+  font-size: 10px;
+  width: 30px;
+  margin: 15px 0 0;
+  font-family: Lato, sans-serif;
+  cursor: pointer;
+}
+li {
+  overflow: hidden;
+  padding: 5px 0;
+}
+
+
+li > label {
+  font-size: 18px;
+  line-height: 40px;
+  width: 280px;
+  padding: 0;
+}
+li > input[type="checkbox"] {
+  margin: 0 10px;
+  position: relative;
+  top: 15px;
+}
+
+#done label {
+  text-decoration: line-through;
+  color: #888;
+}
+
+ul li input[type=text] {
+  display:none;
+}
+
+UL li.editMode input[type=text] {
+  display:block;
+  font-size: 16px;
+  line-height: 36px;
+  width: 276px;
+  padding: 0;
+}
+
+UL li.editMode label {
+  display:none;
+}
