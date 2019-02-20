@@ -12,8 +12,8 @@ click=driver.find_element_by_partial_link_text('Rock')
 click.click()
 assert testLink in driver.page_source
 
-modal=driver.find_element_by_name("button")
-modal.click()
-assert "Ready?go!" in driver.page_source
+#modal=driver.find_element_by_name("button")
+#modal.click()
+#assert "Ready?go!" in driver.page_source
 
 driver.close()
