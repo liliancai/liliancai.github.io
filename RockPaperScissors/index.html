@@ -1,28 +1,47 @@
 <head>
 	<title>RockPaperScissors</title>
 	<link rel="stylesheet" href="style.css">
+	<link href='https://fonts.googleapis.com/css?family=Boogaloo' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Pompiere' rel='stylesheet'>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
 </head>
 <body>
 	<header>
-			<h1>Rock Paper Scissors!</h1>
+			<h1>Rock Paper Scissors!
+			</h1>
 			<h2>Round 1: Select Rock,Paper or Scissors</h2>
 	</header>
 	<main>
-		<!-We need a modal here->
-		<button type="button" name="button">Open modal</button>
+		<!--We need a modal here-->
+<!--<button type="button" name="button">Open modal</button>
 		<div class="modal">
 			<p>Ready?go!</p>
 		</div>
+-->
 		<!-we need a three buttons here->
 		<div class="">
-			<button type="button" name="Rock">Rock</button>
-			<button type="button" name="Paper">Paper</button>
-			<button type="button" name="Scissors">Scissors</button>
+			<button type="button" name="Rock" id="rock">
+				<i class="fa fa-hand-rock fa-2x"></i>
+				Rock
+			</button>
+
+			<button type="button" name="Paper">
+				<i class="fa fa-hand-paper fa-2x"></i>
+				Paper
+			</button>
+
+			<button type="button" name="Scissors">
+				<i class="fa fa-hand-scissors fa-2x"></i>
+					Scissors
+			</button>
 		</div>
+
+		
 		<!-we need a score table here->
 
 		<div class="">
-			<table>
+			<table class="center">
 				<tr>
 					<th>Computer</th>
 					<th>You</th>
@@ -35,9 +54,14 @@
 		</div>
 
 	</main>
-	<footer>
-		Made by <a href="../index.html">Lilian Cai</a>
-		<!-well I did refer Autumn's, here is link, you can check out if you want, I like the design it's very nice->
-	 	<!-https://autumnchris.github.io/rock-paper-scissors/->
+	<footer id="center">
+		Made by
+		<a href="../index.html">
+			Lilian Cai
+			<i class="far fa-heart" aria-hidden="true"></i>
+	<!--	<i class="fa fa-cog fa-pulse fa-0.8x fa-fw"></i>-->
+		</a>
+		<!--well I did refer Autumn's, here is link, you can check out if you want, I like the design it's very nice-->
+	 	<!--https://autumnchris.github.io/rock-paper-scissors/-->
 	</footer>
 </body>

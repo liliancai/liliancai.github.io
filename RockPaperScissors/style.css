@@ -1,24 +1,66 @@
-footer{
+footer#center{
   bottom: 0;
   position: absolute;
-  text-align: center;
-  margin-left: 45%;
-
+//  text-align: center;
+  margin-left: 35%;
+  margin-right: 35%;
+  width: 30%;
+//  background: #2000;
+  margin-bottom: 1%;
 }
 
 html{
   text-align: center;
 }
 
-button{
-  color: #154E80;
+footer>a{
+  width: 30%;
+  color: black;
 }
 
-table{
-  margin-left: 47%;
-  //the thing is I don't know how to center the table
-  //47% just looks like in center
+h1{
+  font-family: 'Boogaloo';font-size: 40px;
+  color: #643000;
 }
+h2{
+  //like this font;
+  font-family: 'Pompiere';font-size: 20px;
+}
+
+table.center{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  //aha,have to use class then it works.
+  //center now!
+  //got to manage test it later.
+
+
+
+}
+
+
+button,
+button:active,
+button:focus {
+  background: #154E80;
+  border-radius: 5px;
+  color: #fff;
+  margin: 3px 15px;
+  padding: 10px;
+  width: 70px;
+}
+button{
+  outline: none;
+  border: none;
+}
+
+
+i{
+  margin-bottom: 5px;
+}
+
+
 /*
 *:focus {
   box-shadow: 0 0 3px 3px rgba(65, 180, 250, 0.8);
@@ -61,17 +103,7 @@ p {
   margin: 15px 0;
 }
 
-button,
-button:hover,
-button:active,
-button:focus {
-  background: #006699;
-  border-radius: 3px;
-  color: #fff;
-  margin: 0 3px;
-  padding: 10px;
-  width: 80px;
-}
+
 
 button .far {
   display: block;
