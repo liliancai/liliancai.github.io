@@ -13,6 +13,7 @@ var rounds=0;
 
 var gameStarted=0;
 var gameEnded=0;
+var result='';
 
 // user click the ready button, then round from 0ornull to 1,score 0:0
 function startTheGame(){
@@ -80,12 +81,17 @@ function startTheGame(){
    document.querySelector('.computerScore').innerHTML=computerScore;
    //if rounds more than 10, end game
    if(rounds >=10){
+     if(yourScore === computerScore){
+       result="it's a draw";
+     }else if(yourScore >= computerScore){
+       result="you won";
+     }else{
+       result="you lost";
+     }
      gameEnded=1;
-     document.querySelector('.modal-content>p').innerHTML="Game over,start again?";
+     document.querySelector('.modal-content>p').innerHTML=`Game over, ${result}, start again?`;
      document.getElementById('modal').style.display='block';
      document.querySelector('#message').innerHTML='';
-     document.querySelector('.yourScore').innerHTML='';
-     document.querySelector('.computerScore').innerHTML='';
      computerScore=0;
      yourScore=0;
      rounds=0;
