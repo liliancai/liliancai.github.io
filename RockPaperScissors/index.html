@@ -1,3 +1,6 @@
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
 	<title>RockPaperScissors</title>
 	<link rel="stylesheet" href="style.css">
@@ -14,12 +17,15 @@
 	</header>
 	<main>
 		<!--We need a modal here-->
-<!--<button type="button" name="button">Open modal</button>
-		<div class="modal">
-			<p>Ready?go!</p>
+		<!-- could be a x button here, trigger another start button  -->
+		<div id="modal" class="modal">
+			<div class="modal-content">
+				<p>Click the button below!</p>
+				<button type="button" id="ready">Ready?go!</button>
+			</div>
 		</div>
--->
-		<!-we need a three buttons here->
+
+		<!--we need a three buttons here-->
 		<div class="">
 			<button type="button" name="Rock" id="rock">
 				<i class="far fa-hand-rock fa-2x"></i>
@@ -37,8 +43,7 @@
 			</button>
 		</div>
 
-
-		<!-we need a score table here->
+		<!--we need a score table here-->
 
 		<div class="">
 			<table class="center">
@@ -47,8 +52,8 @@
 					<th>You  <i class="fa fa-cog fa-pulse fa-0.8x fa-fw"></th>
 				</tr>
 				<tr>
-					<td>0</td>
-					<td>0</td>
+					<td></td>
+					<td></td>
 				</tr>
 			</table>
 		</div>
@@ -64,4 +69,8 @@
 		<!--well I did refer Autumn's, here is link, you can check out if you want, I like the design it's very nice-->
 	 	<!--https://autumnchris.github.io/rock-paper-scissors/-->
 	</footer>
+	<script src="script.js" charset="utf-8"></script>
+
+	</script>
 </body>
+</html>

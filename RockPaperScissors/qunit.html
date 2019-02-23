@@ -2,25 +2,37 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>QUnit basic example</title>
+  <title>RockPaperScissors TestCase</title>
   <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.9.1.css">
 </head>
 <body>
+  <!-- mock a button  to test if can trigger startTheGame -->
+  <div id="modal"> <button type="button" id="ready"></button>test display</div>
   <div id="qunit"></div>
   <div id="qunit-fixture"></div>
 
   <script src="https://code.jquery.com/qunit/qunit-2.9.1.js"></script>
   <script src="script.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
 
   <script>
+  // make sure this test page works
     QUnit.test( "a basic test example", function( assert ) {
       var value = "hello";
       assert.equal( value, "hello", "We expect value to be hello" );
     });
 
-    QUnit.test("first test case tempting",function(assert){
-      var value=startTheGame();
-      assert.equal("True",value,"okay");//first argument is the expected result
+    QUnit.test("test_if_ready_trigger_hide_modal",function(assert){
+      var $modaltrigger=$("#ready");
+      $modaltrigger.trigger("click"); //trigger addEventListener in script.js
+      assert.equal(document.getElementById('modal').style.display,"none","okay");
+    });
+
+    QUnit.test("test_startTheGame_triggered",function(assert){
+      var $modaltrigger=$("#ready");
+      $modaltrigger.trigger("click");
+      assert.ok(gameStarted);  //excepted true = 1
     });
 //but my javascript functions maybe not testable, i.g. no return
 //should I use selenium&unitcase to test all the user behaviors?

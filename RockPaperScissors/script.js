@@ -7,12 +7,19 @@
 //button=getElementById('rock');
 //get button, get table, get scissor;
 
+var gameStarted=0;
 //user click the ready button, then round from 0ornull to 1,score 0:0
 function startTheGame(){
-  return "True";
+  document.getElementById('modal').style.display='none';
+  gameStarted=1;
 }
 
+document.querySelector('#ready').addEventListener('click',()=> {
+  console.log("Hi click ready go");
+  startTheGame();
+});
 
-//event listeners,for ready and each button
+
+
 
 //1st one should press ready button and see round1 score 0:0
