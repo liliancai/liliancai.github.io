@@ -24,29 +24,82 @@ function startTheGame(){
 }
 
 
- function playTheGame(){
+ function playTheGame(event){
    rounds++;
    document.querySelector('.round').innerHTML=`Round ${rounds}: Select Rock, Paper, or Scissors.`;
 
+   var userGesture=event.target.id;
+   var computerGesture="";
+   var computerGestureFlag=Math.floor((Math.random()*3+1));
 
+   switch (computerGestureFlag) {
+    case 1:  // rock
+      computerGesture="rock";
+      if(computerGesture === userGesture){
+        document.querySelector('#message').innerHTML="It's a draw!";
+      }
+      else if(userGesture === 'paper'){
+        document.querySelector('#message').innerHTML=`Computer played ${computerGesture}, you played ${userGesture}, you won this round.`;
+        yourScore++;
+      }else{
+        document.querySelector('#message').innerHTML=`Computer played ${computerGesture}, you played ${userGesture}, you lost this round.`;
+        computerScore++;
+      }
+      break;
 
+    case 2:
+      computerGesture='paper';
+      if(computerGesture === userGesture){
+        document.querySelector('#message').innerHTML="It's a draw!";
+      }
+      else if(userGesture === 'scissors'){
+        document.querySelector('#message').innerHTML=`Computer played ${computerGesture}, you played ${userGesture}, you won this round.`;
+        yourScore++;
+      }else{
+        document.querySelector('#message').innerHTML=`Computer played ${computerGesture}, you played ${userGesture}, you lost this round.`;
+        computerScore++;
+      }
+      break;
+
+    case 3:
+      computerGesture='scissors';
+      if(computerGesture === userGesture){
+        document.querySelector('#message').innerHTML="It's a draw!";
+      }
+      else if(userGesture === 'rock'){
+        document.querySelector('#message').innerHTML=`Computer played ${computerGesture}, you played ${userGesture}, you won this round.`;
+        yourScore++;
+      }else{
+        document.querySelector('#message').innerHTML=`Computer played ${computerGesture}, you played ${userGesture}, you lost this round.`;
+        computerScore++;
+      }
+      break;
+    default:
+   }
+   document.querySelector('.yourScore').innerHTML=yourScore;
+   document.querySelector('.computerScore').innerHTML=computerScore;
    //if rounds more than 10, end game
    if(rounds >=10){
      gameEnded=1;
      document.querySelector('.modal-content>p').innerHTML="Game over,start again?";
      document.getElementById('modal').style.display='block';
+     document.querySelector('#message').innerHTML='';
+     document.querySelector('.yourScore').innerHTML='';
+     document.querySelector('.computerScore').innerHTML='';
+     computerScore=0;
+     yourScore=0;
+     rounds=0;
    }
 }
 
 document.querySelector('#ready').addEventListener('click',()=> {
-  console.log("Hi click ready go");
   startTheGame();
 });
 
 
  document.querySelectorAll('.buttons').forEach(button =>{
-   button.addEventListener('click',()=>{
-        playTheGame();
+   button.addEventListener('click',(event)=>{
+        playTheGame(event);
   });
  });
 // });

@@ -49,6 +49,16 @@
       $rockButton.trigger('click');
       assert.equal(rounds,1,"okay at least once played the game");
     });
+
+    QUnit.test('test_message_changed',function(assert){
+      var $rockButton=$('#rock');
+
+      //var $msg1=$('#message').html();
+      //assert.equal('',$msg1,"yup, there is not msg.")
+      $rockButton.trigger('click');
+      var $msg2=$('#message').html();
+      assert.ok($msg2,"message changed");
+    });
 //but my javascript functions maybe not testable, i.g. no return
 //should I use selenium&unitcase to test all the user behaviors?
   </script>

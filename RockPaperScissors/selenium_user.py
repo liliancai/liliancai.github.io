@@ -31,6 +31,7 @@ class RockPaperScissorsTest(unittest.TestCase):
         assert "Round 1" in self.browser.page_source
 
     # click the buttons 10 times
+    # also check round&msg&table went to 0orempty
     def test_if_game_end(self):
         self.browser.get("file:///home/lilian/liliancai.github.io/RockPaperScissors/index.html")
         modal=self.browser.find_element_by_css_selector('#ready')
