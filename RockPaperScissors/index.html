@@ -11,22 +11,21 @@
 </head>
 <body>
 	<header>
-			<h1>Rock Paper Scissors!
-			</h1>
-			<h2>Round 1: Select Rock,Paper or Scissors</h2>
+			<h1>Rock Paper Scissors!</h1>
+			<h2 class="round">Round 0: Select Rock,Paper or Scissors</h2>
 	</header>
 	<main>
 		<!--We need a modal here-->
 		<!-- could be a x button here, trigger another start button  -->
 		<div id="modal" class="modal">
 			<div class="modal-content">
-				<p>Click the button below!</p>
-				<button type="button" id="ready">Ready?go!</button>
+				<p>Ready?</p>
+				<button type="button" id="ready">Go</button>
 			</div>
 		</div>
 
 		<!--we need a three buttons here-->
-		<div class="">
+		<div class="buttons">
 			<button type="button" name="Rock" id="rock">
 				<i class="far fa-hand-rock fa-2x"></i>
 				Rock
@@ -43,6 +42,8 @@
 			</button>
 		</div>
 
+		<p id="message"></p>
+
 		<!--we need a score table here-->
 
 		<div class="">
@@ -52,8 +53,8 @@
 					<th>You  <i class="fa fa-cog fa-pulse fa-0.8x fa-fw"></th>
 				</tr>
 				<tr>
-					<td></td>
-					<td></td>
+					<td class="computerScore"></td>
+					<td class="yourScore"></td>
 				</tr>
 			</table>
 		</div>

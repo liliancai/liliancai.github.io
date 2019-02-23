@@ -8,6 +8,14 @@
 <body>
   <!-- mock a button  to test if can trigger startTheGame -->
   <div id="modal"> <button type="button" id="ready"></button>test display</div>
+  <h2 class="round">Round #: Select Rock,Paper or Scissors</h2>
+  <p class="computerScore"></p>
+  <p class="yourScore"></p>
+  <div class="buttons">
+    <button type="button" id='rock'>click me!</button>
+  </div>
+  <p id="message"></p>
+
   <div id="qunit"></div>
   <div id="qunit-fixture"></div>
 
@@ -32,7 +40,14 @@
     QUnit.test("test_startTheGame_triggered",function(assert){
       var $modaltrigger=$("#ready");
       $modaltrigger.trigger("click");
-      assert.ok(gameStarted);  //excepted true = 1
+      //assert.ok(gameStarted);  //excepted true = 1
+      assert.equal(gameStarted,1,"okay game started");
+    });
+
+    QUnit.test("test_if_playTheGame_triggered",function(assert){
+      var $rockButton=$('#rock');
+      $rockButton.trigger('click');
+      assert.equal(rounds,1,"okay at least once played the game");
     });
 //but my javascript functions maybe not testable, i.g. no return
 //should I use selenium&unitcase to test all the user behaviors?
