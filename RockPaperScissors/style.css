@@ -67,9 +67,9 @@ i{
 .modal{
   position: fixed;
   z-index: 1;
-  margin-left: 35%;
-  margin-right: 35%;
-  width: 30%; /* for center the modal */
+  margin-left: 38%;
+  margin-right: 38%;
+  width: 24%; /* for center the modal */
   height:120px;
   background-color: #fff;
   border: solid 1px black;
