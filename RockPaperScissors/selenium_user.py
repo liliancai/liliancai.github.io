@@ -1,9 +1,6 @@
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-import unittest
-from unittest import skip
+from .base import FunctionalTest
 
-class RockPaperScissorsTest(unittest.TestCase):
+class RockPaperScissorsTest(FunctionalTest):
     def setUp(self):
         self.browser=webdriver.Firefox()
     def tearDown(self):
