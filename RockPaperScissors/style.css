@@ -1,10 +1,10 @@
 footer#center{
   bottom: 0;
   position: absolute;
-//  text-align: center;
-  margin-left: 35%;
-  margin-right: 35%;
-  width: 30%;
+  text-align: center;
+  margin-left: 30%;
+  margin-right: 30%;
+  width: 40%;
 //  background: #2000;
   margin-bottom: 2%;
 }
@@ -17,6 +17,7 @@ html{
 footer>a{
   width: 30%;
   color: black;
+  text-align: center;
 }
 
 h1{
@@ -67,12 +68,14 @@ i{
 .modal{
   position: fixed;
   z-index: 1;
-  margin-left: 38%;
-  margin-right: 38%;
-  width: 24%; /* for center the modal */
+  margin-left: 30%;
+  margin-right: 30%;
+  width: 40%; /* for center the modal */
   height:120px;
   background-color: #fff;
   border: solid 1px black;
+  text-align: center;
+  display: block;
   /* too ugly --! */
   /* background-color: rgba(117, 25, 25, 0.2); */
   /* background-color:rgba(#410f07, 0.5); */
@@ -83,6 +86,8 @@ i{
 .modal-content{
   padding: 10px 0;
   //height: 10%;
+  margin-left: auto;
+  margin-right: auto;
 }
 /* for test modal */
 /*
