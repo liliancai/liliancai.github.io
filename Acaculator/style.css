@@ -1,0 +1,41 @@
+footer#center{
+  bottom: 0;
+  position: absolute;
+  text-align: center;
+  margin-left: 25%;
+  margin-right: 25%;
+  width: 50%;
+//  background: #2000;
+  margin-bottom: 2%;
+  color: black;
+}
+
+div.box{
+    width: 285px;
+    height: 350px;
+    margin: 15% auto auto;
+    border: 1px solid #9e9b97;
+    border-radius: 20px;
+    box-shadow: 1px 5px 5px  #666;
+}
+
+div.screen{
+    width: 240px;
+    height: 50px;
+    margin: 10% auto;
+    border: 1px solid #242725;
+    border-radius: 5px;
+    //background: grey;
+    background:#bab6b0 ;
+}
+.buttons{
+    margin: 10% auto;
+}
+button{
+  margin: 5px;
+  padding: 3px 10px;
+  width: 50px;
+  height: 30px;
+  border: 1px solid grey;
+  box-shadow: 1px 2px #666;
+}
