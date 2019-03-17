@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -12,41 +13,41 @@
   <body>
     <div class="box">
         <div class="screen">
-            <div class="input-line">0</div>
-            <div class="output-line">0</div>
+            <div class="input-line" id="input-line"></div>
+            <div class="output-line"></div>
         </div>
         <div class="container-fluid">
             <div class="buttons">
-                <button class="btn-clear btn btn-danger">C</button>
-                <button class="btn btn-secondary" ><i class="fas fa-backspace"></i></button>
+                <button class="btn btn-danger">C</button>
+                <button class="backbuttn btn btn-secondary" ><i class="fas fa-backspace"></i></button>
                 <button class="btn">/</i></button>
                 <button class="btn">*</button>
             </div>
 
             <div class="buttons">
-                <button class="btn ">7</button>
-                <button class="btn">8</button>
-                <button class="btn">9</button>
+                <button class="nums btn" value="7">7</button>
+                <button class="nums btn" value="8">8</button>
+                <button class="nums btn" value="9">9</button>
                 <button class="btn">-</button>
             </div>
 
             <div class="buttons">
-                <button class="btn-clear btn">4</button>
-                <button class="btn">5</button>
-                <button class="btn">6</button>
+                <button class="nums btn" value="4">4</button>
+                <button class="nums btn" value="5">5</button>
+                <button class="nums btn" value="6">6</button>
                 <button class="btn">+</button>
             </div>
 
             <div class="buttons">
-                <button class="btn-clear btn">1</button>
-                <button class="btn">2</button>
-                <button class="btn">3</button>
+                <button class="nums btn-clear btn" value="1">1</button>
+                <button class="nums btn" value="2">2</button>
+                <button class="nums btn" value="3">3</button>
                 <button class="btn btn-dark">=</button>
             </div>
             <div class="buttons">
                 <button class="btn">%</button>
-                <button class="btn">0</button>
-                <button class="btn">.</button>
+                <button class="nums btn" value="0">0</button>
+                <button class="nums btn">.</button>
             </div>
         </div>
         </div>
@@ -57,6 +58,8 @@
     <footer id="center">
         Made by <a style="color:black" href="../index.html">Lilian Cai <i class="fa fa-heart" aria-hidden="true"></i></a>
     </footer>
+     <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script src="script.js"></script>
   </body>
 
 <!-- <!DOCTYPE html>
@@ -128,8 +131,7 @@
       </a>
   </footer>
 
-  <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
-  <script src="js/main.js"></script>
+
 </body>
 </html>
 -->
