@@ -5,7 +5,6 @@ footer#center{
   margin-left: 25%;
   margin-right: 25%;
   width: 50%;
-//  background: #2000;
   margin-bottom: 2%;
   color: black;
   font-family: 'Montserrat', sans-serif;
@@ -17,9 +16,8 @@ div.box{
     margin: 10% auto auto;
     border: 1px solid #9e9b97;
     border-radius: 20px;
-    box-shadow: 1px 5px 5px #838381, inset -2px -8px 10px 0px #c1b9b8;
-    // -5 would be the bottom
-//    box-shadow: 0px 4px 8px, inset 0 1px 10px 1px// #89847e;
+    box-shadow: 0px 5px 5px #838381, inset -2px -8px 10px 0px #c1b9b8;
+    //-5 would be the bottom;
 }
 
 div.screen{
@@ -28,7 +26,6 @@ div.screen{
     margin: 28px 25px 17px 20px;
     border: 1px solid #9e9b97;
     border-radius: 7px;
-    //background: grey;
     background:#c7d3c5 ;
 }
 
@@ -37,10 +34,9 @@ div.screen{
   margin: 5px;
   width: 50px;
   height: 35px;
-  border: 2px solid black;
+  border: 0px solid black;
   box-shadow: 1.5px 2.5px #757a75, inset 0px 0px 0px 0.5px #c1b9b8;
 }
-
 
 .btn-dark{
     margin: 11px 9px;
@@ -59,4 +55,15 @@ div.screen{
     margin: 5px;
     font-size: 15px;
     text-align: right;
+}
+
+.btn:focus {
+    box-shadow: 1.5px 2.5px #757a75, inset 0px 0px 0px 0.5px #c1b9b8 !important;
+//    box-shadow: none !important;
+}
+.btn:active {
+  transform: translateY(4px);
+}
+.bth:hover{
+    background: grey !important;
 }
