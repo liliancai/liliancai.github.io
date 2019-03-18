@@ -4,11 +4,11 @@ var helloword = function(){
     return "Hello World";
 }
 var abc = "abc";
-var newResult = 0;// new lastResult
-var inputNum = 0;
-var lastResult = 0;// Last lastResult of operation
+let newResult = 0;// new lastResult
+let inputNum = 0;
+let inputNumStr = '';
+let lastResult = 0;// Last lastResult of operation
 let operator = '+';
-var changeOp = false;
 
 var $inputLine = $('#input-line');
 var $outputLine = $('.output-line');
@@ -28,6 +28,7 @@ var reset = function(){
     inputNum = 0;
     lastResult = 0;
     operator = '+';
+    inputNumStr = '';
     return $inputLine;
 };
 
@@ -38,6 +39,7 @@ var operate = function(){
     lastResult = newResult;
     //console.log("8-",lastResult);
     inputNum =0;
+    inputNumStr = '';
 };
 
 var operatNum = function(){
@@ -62,7 +64,7 @@ var clickOnNums =  function(){
         //$inputLine.html('1').append($(this).val());
         // If more than one . return so it won't change
         // anything
-        if ($(this).val() == '.' && ($inputLine.html().indexOf('.') != -1)){
+        if ($(this).val() == '.' && (inputNumStr.indexOf('.') != -1)){
             return;
         }
         // If % move the . two digits ahead.
@@ -77,14 +79,16 @@ var clickOnNums =  function(){
             overFlow();
             return;
         }
-        if($(this).val() == '%'){
-            if($inputLine.html().indexOf('%') != -1){
+        if($(this).val() == '%' ){
+            if(inputNumStr.indexOf('%') != -1){
                 $outputLine.html('Error');
                 return
             }
             inputNum = inputNum /100;
         }else {
-            inputNum = inputNum * 10 + parseFloat($(this).val());
+            inputNumStr += $(this).val();
+            inputNum = parseFloat(inputNumStr);
+            //inputNum = inputNum * 10 + parseFloat($(this).val());
         }
         $inputLine.append($(this).val());
 
