@@ -27,18 +27,20 @@ var reset = function(){
     newResult = 0;
     inputNum = 0;
     lastResult = 0;
+    operator = '+';
     return $inputLine;
 };
+
 var operate = function(){
     operator = $(this).val();
     //alert("why is not *"+ operator);
     $inputLine.append(operator);
     lastResult = newResult;
-    console.log("8-",lastResult);
+    //console.log("8-",lastResult);
     inputNum =0;
 };
-var operatNum = function(){
 
+var operatNum = function(){
     switch (operator) {
         case '+':
             newResult = lastResult + inputNum;
@@ -64,12 +66,7 @@ var clickOnNums =  function(){
             return;
         }
         // If % move the . two digits ahead.
-        if($(this).val() == '%'){
-            if($inputLine.html().indexOf('%') != -1){
-                $outputLine.html('Error');
-                return
-            }
-        }
+
         // If reach limit, reset
 
         if ($outputLine.html() == 'BufferOverFlow' || $outputLine.html() == 'Error'){
@@ -80,8 +77,17 @@ var clickOnNums =  function(){
             overFlow();
             return;
         }
+        if($(this).val() == '%'){
+            if($inputLine.html().indexOf('%') != -1){
+                $outputLine.html('Error');
+                return
+            }
+            inputNum = inputNum /100;
+        }else {
+            inputNum = inputNum * 10 + parseFloat($(this).val());
+        }
         $inputLine.append($(this).val());
-        inputNum = inputNum * 10 + parseFloat($(this).val());
+
         operatNum();
 };
 
@@ -92,7 +98,7 @@ var backspace = function(){
 };
 
 var givelastResult = function(){
-    $inputLine.html(lastResult);
+    $inputLine.html(newResult);
     $outputLine.html('');
 };
 var onReady = function(){
@@ -107,7 +113,7 @@ var onReady = function(){
 
     // Time to do the real math now- -!
     $('.ops').click(operate);
-    $('.lastResultbutton').click(givelastResult);
+    $('.resultbutton').click(givelastResult);
 
 };
 $(document).ready(onReady);
