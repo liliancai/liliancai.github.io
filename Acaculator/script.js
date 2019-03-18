@@ -71,19 +71,21 @@ var clickOnNums =  function(){
 
         // If reach limit, reset
 
-        if ($outputLine.html() == 'BufferOverFlow' || $outputLine.html() == 'Error'){
+        if ($outputLine.html() == 'BufferOverFlow'){
             reset();
             return;
         }
-        if ($inputLine.html().length > 12){
+        if ($inputLine.html().length > 11){
             overFlow();
             return;
         }
+
+
         if($(this).val() == '%' ){
             if(inputNumStr.indexOf('%') != -1){
-                $outputLine.html('Error');
-                return
+                return;
             }
+            inputNumStr += $(this).val();
             inputNum = inputNum /100;
         }else {
             inputNumStr += $(this).val();
@@ -91,10 +93,8 @@ var clickOnNums =  function(){
             //inputNum = inputNum * 10 + parseFloat($(this).val());
         }
         $inputLine.append($(this).val());
-
         operatNum();
 };
-
 
 
 var backspace = function(){
