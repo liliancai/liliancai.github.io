@@ -1,9 +1,15 @@
-// One operator, two num2
+// One operator, two inputNum a+b=c c+d=e etc
 // clear, withdraw, equal
 var helloword = function(){
     return "Hello World";
 }
 var abc = "abc";
+var newResult = 0;// new lastResult
+var inputNum = 0;
+var lastResult = 0;// Last lastResult of operation
+let operator = '+';
+var changeOp = false;
+
 var $inputLine = $('#input-line');
 var $outputLine = $('.output-line');
 
@@ -18,9 +24,38 @@ var overFlow = function(){
 var reset = function(){
     $inputLine.html('');
     $outputLine.html('');
+    newResult = 0;
+    inputNum = 0;
+    lastResult = 0;
     return $inputLine;
 };
+var operate = function(){
+    operator = $(this).val();
+    //alert("why is not *"+ operator);
+    $inputLine.append(operator);
+    lastResult = newResult;
+    console.log("8-",lastResult);
+    inputNum =0;
+};
+var operatNum = function(){
 
+    switch (operator) {
+        case '+':
+            newResult = lastResult + inputNum;
+            break;
+        case '-':
+            newResult = lastResult - inputNum;
+            break;
+        case '/':
+            newResult = lastResult / inputNum;
+            break;
+        case '*':
+            newResult = lastResult * inputNum;
+            break;
+        default:
+    }
+    $outputLine.html(newResult);
+}
 var clickOnNums =  function(){
         //$inputLine.html('1').append($(this).val());
         // If more than one . return so it won't change
@@ -30,20 +65,36 @@ var clickOnNums =  function(){
         }
         // If % move the . two digits ahead.
         if($(this).val() == '%'){
-            $outputLine.html()/100;
+            if($inputLine.html().indexOf('%') != -1){
+                $outputLine.html('Error');
+                return
+            }
         }
         // If reach limit, reset
-        if ($outputLine.html() == 'BufferOverFlow'){
-            reset();
-        }
-        $inputLine.append($(this).val());
-        $outputLine.append($(this).val());
 
+        if ($outputLine.html() == 'BufferOverFlow' || $outputLine.html() == 'Error'){
+            reset();
+            return;
+        }
         if ($inputLine.html().length > 12){
             overFlow();
+            return;
         }
+        $inputLine.append($(this).val());
+        inputNum = inputNum * 10 + parseFloat($(this).val());
+        operatNum();
 };
 
+
+
+var backspace = function(){
+    $inputLine.html($inputLine.html().substring(0, $inputLine.html().length-1));
+};
+
+var givelastResult = function(){
+    $inputLine.html(lastResult);
+    $outputLine.html('');
+};
 var onReady = function(){
     // If numbers pressed
     $('.nums').click(clickOnNums);
@@ -52,10 +103,11 @@ var onReady = function(){
     $('.ac').click(reset);
     // If =
     // If <-
-    $('.backbuttn').click(function(){
-        $inputLine.html($inputLine.html().substring(0, $inputLine.html().length-1));
-    });
-    // console.log("am in");
-    //$outputLine.html('').append("game over");
+    $('.backbuttn').click(backspace);
+
+    // Time to do the real math now- -!
+    $('.ops').click(operate);
+    $('.lastResultbutton').click(givelastResult);
+
 };
 $(document).ready(onReady);
